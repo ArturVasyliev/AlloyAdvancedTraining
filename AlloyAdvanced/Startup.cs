@@ -1,11 +1,12 @@
-using System;
-using System.Web;
+using AlloyAdvanced.Features.ResetAdmin;
 using EPiServer.Cms.UI.AspNetIdentity;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin;
 using Microsoft.Owin.Security.Cookies;
 using Owin;
+using System;
+using System.Web;
 
 [assembly: OwinStartup(typeof(AlloyAdvanced.Startup))]
 
@@ -43,6 +44,9 @@ namespace AlloyAdvanced
                         regenerateIdentity: (manager, user) => manager.GenerateUserIdentityAsync(user))
                 }
             });
+
+            // Remove to block reset of Admin user
+            // app.UseResetAdmin(() => HttpContext.Current.Request.IsLocal);
         }
     }
 }
