@@ -191,6 +191,7 @@
     </Reference>
     <Reference Include="System.Net" />
     <Reference Include="System.Runtime.Remoting" />
+    <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Security.AccessControl, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Security.AccessControl.4.4.0\lib\net461\System.Security.AccessControl.dll</HintPath>
@@ -326,6 +327,18 @@
     <Compile Include="Models\Media\GenericMedia.cs" />
     <Compile Include="Models\Media\ImageFile.cs" />
     <Compile Include="Models\Media\VideoFile.cs" />
+    <Compile Include="Models\NorthwindEntities\Category.cs" />
+    <Compile Include="Models\NorthwindEntities\Customer.cs" />
+    <Compile Include="Models\NorthwindEntities\CustomerDemographic.cs" />
+    <Compile Include="Models\NorthwindEntities\Employee.cs" />
+    <Compile Include="Models\NorthwindEntities\Northwind.cs" />
+    <Compile Include="Models\NorthwindEntities\Order.cs" />
+    <Compile Include="Models\NorthwindEntities\Order_Detail.cs" />
+    <Compile Include="Models\NorthwindEntities\Product.cs" />
+    <Compile Include="Models\NorthwindEntities\Region.cs" />
+    <Compile Include="Models\NorthwindEntities\Shipper.cs" />
+    <Compile Include="Models\NorthwindEntities\Supplier.cs" />
+    <Compile Include="Models\NorthwindEntities\Territory.cs" />
     <Compile Include="Models\Pages\ArticlePage.cs" />
     <Compile Include="Models\Pages\ContactPage.cs" />
     <Compile Include="Models\Pages\ContainerPage.cs" />
