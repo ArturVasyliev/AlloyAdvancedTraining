@@ -1,4 +1,4 @@
-@charset "utf-8";
+﻿@charset "utf-8";
 /* CSS Document */
 
 /*Headers*/
@@ -636,4 +636,11 @@ form.search-form {
 .epi-editContainer {
     min-height: 1.1em;
     min-width: 1.6em;
+}
+
+.commentblock {
+    border-radius: 4pt;
+    background-color: seashell;
+    padding: 8pt;
+    margin: 2pt;
 }
