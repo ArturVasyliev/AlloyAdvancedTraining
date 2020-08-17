@@ -1,3 +1,6 @@
+using EPiServer.Core;
+using System.ComponentModel.DataAnnotations;
+
 namespace AlloyAdvanced.Models.Pages
 {
     /// <summary>
@@ -9,6 +12,8 @@ namespace AlloyAdvanced.Models.Pages
     [SiteImageUrl(Global.StaticGraphicsFolderPath + "page-type-thumbnail-article.png")]
     public class ArticlePage : StandardPage
     {
-
+        //[SelectOne(SelectionFactoryType = typeof(ContactPageSelectionFactory))]
+        [UIHint(Global.SiteUIHints.Contact)]
+        public virtual PageReference Author { get; set; }
     }
 }
