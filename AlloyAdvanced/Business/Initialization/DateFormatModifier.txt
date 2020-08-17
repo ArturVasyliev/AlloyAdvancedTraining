@@ -1,0 +1,1 @@
+How to apply the UI-Culture for en-AU so that dates etc. are formatted correctly in Commerce UI (i.e. dd/mm/yyyy instead of US format mm/dd/yyyy). For example the start and end dates in the Edit Prices section.

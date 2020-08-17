@@ -293,10 +293,13 @@
     <Compile Include="Business\ContentLocator.cs" />
     <Compile Include="Business\EditorDescriptors\ContactPageSelectionFactory.cs" />
     <Compile Include="Business\EditorDescriptors\ContactPageSelector.cs" />
+    <Compile Include="Business\EditorDescriptors\EmbiggenEditorDescriptor.cs" />
     <Compile Include="Business\EditorDescriptors\StringListEditorDescriptor.cs" />
     <Compile Include="Business\IModifyLayout.cs" />
     <Compile Include="Business\Initialization\BundleConfig.cs" />
+    <Compile Include="Business\Initialization\ConfigureTinyMCEToolbarInitializationModule.cs" />
     <Compile Include="Business\Initialization\CustomizedRenderingInitialization.cs" />
+    <Compile Include="Business\Initialization\DateFormatModifier.cs" />
     <Compile Include="Business\Initialization\DependencyResolverInitialization.cs" />
     <Compile Include="Business\Initialization\DisplayModesInitialization.cs" />
     <Compile Include="Business\Initialization\DisplayRegistryInitialization.cs" />
@@ -422,6 +425,7 @@
     <Content Include="App_Data\EPiServerDB_d9fc4d13_log.ldf">
       <DependentUpon>EPiServerDB_d9fc4d13.mdf</DependentUpon>
     </Content>
+    <Content Include="Business\Initialization\DateFormatModifier.txt" />
     <Content Include="ClientResources\Images\icons\layoutIcons24x24.png" />
     <Content Include="ClientResources\Scripts\Editors\StringList.js" />
     <Content Include="ClientResources\Styles\LayoutIcons.css" />
