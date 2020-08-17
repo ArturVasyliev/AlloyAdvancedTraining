@@ -397,6 +397,8 @@
     <Compile Include="Business\Selectors\YouTubeSelectionFactory.cs" />
     <Compile Include="Business\ServiceLocatorDependencyResolver.cs" />
     <Compile Include="Business\UIDescriptors\ContainerPageUIDescriptor.cs" />
+    <Compile Include="Business\ViewTransformers\DebugViewTransformer.cs" />
+    <Compile Include="Business\ViewTransformers\RemoveComponentsViewTransformer.cs" />
     <Compile Include="Business\VisitorGroups\CookieCriterion.cs" />
     <Compile Include="Business\VisitorGroups\CookieCriterionModel.cs" />
     <Compile Include="Controllers\AppSettingsController.cs" />
