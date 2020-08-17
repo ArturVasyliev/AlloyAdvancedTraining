@@ -80,6 +80,7 @@ namespace AlloyAdvanced
             public const string Strings = "StringList";
             public const string StringsCollection = "StringsCollection";
             public const string Embiggen = "Embiggen";
+            public const string DateOnly = "dateonly";
         }
 
         /// <summary>

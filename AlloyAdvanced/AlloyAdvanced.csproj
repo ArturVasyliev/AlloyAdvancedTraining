@@ -294,6 +294,7 @@
     <Compile Include="Business\EditorDescriptors\CityEditorDescriptor.cs" />
     <Compile Include="Business\EditorDescriptors\ContactPageSelectionFactory.cs" />
     <Compile Include="Business\EditorDescriptors\ContactPageSelector.cs" />
+    <Compile Include="Business\EditorDescriptors\DateOnlyEditorDescriptor.cs" />
     <Compile Include="Business\EditorDescriptors\EmbiggenEditorDescriptor.cs" />
     <Compile Include="Business\EditorDescriptors\HideCategoryEditorDescriptor.cs" />
     <Compile Include="Business\EditorDescriptors\MoveSortIndexEditorDescriptor.cs" />
