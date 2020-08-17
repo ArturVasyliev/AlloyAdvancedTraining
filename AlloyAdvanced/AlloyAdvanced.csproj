@@ -377,8 +377,10 @@
     <Compile Include="Business\Rendering\ICustomCssInContentArea.cs" />
     <Compile Include="Business\Rendering\SiteViewEngine.cs" />
     <Compile Include="Business\Rendering\TemplateCoordinator.cs" />
+    <Compile Include="Business\ScheduledJobs\AppleWatchScheduledJob.cs" />
     <Compile Include="Business\ScheduledJobs\ImportImagesScheduledJob.cs" />
     <Compile Include="Business\ScheduledJobs\ImportShippersScheduledJob.cs" />
+    <Compile Include="Business\ScheduledJobs\PingSiteScheduledJob.cs" />
     <Compile Include="Business\SearchService.cs" />
     <Compile Include="Business\Selectors\CitySelectionFactory.cs" />
     <Compile Include="Business\Selectors\EnumSelectionFactory.cs" />
