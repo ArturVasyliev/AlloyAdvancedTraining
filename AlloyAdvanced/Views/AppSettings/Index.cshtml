@@ -1,0 +1,45 @@
+﻿@using EPiServer.Framework.Web.Resources
+@model AppSettingsViewModel
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en">
+<head>
+    <title>App Settings</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <!-- Shell -->
+    @Html.Raw(ClientResources.RenderResources("ShellCore"))
+    <!-- LightTheme -->
+    @Html.Raw(ClientResources.RenderResources("ShellCoreLightTheme"))
+    <link href="../../../../App_Themes/Default/Styles/system.css" type="text/css" rel="stylesheet">
+    <link href="../../../../App_Themes/Default/Styles/ToolButton.css" type="text/css" rel="stylesheet">
+</head>
+<body id="body">
+    @Html.Raw(Html.ShellInitializationScript())
+    @using (Html.BeginForm("Index", "AppSettings", FormMethod.Post))
+    {
+        <div class="epi-contentContainer epi-padding">
+            <div class="epi-contentArea">
+                <h1 class="EP-prefix">
+                    App Settings<a onclick="window.open(&#39;http://webhelp.episerver.com/16-9/EpiserverUserGuide_csh.htm#indexcontent&#39;,&#39;_blank&#39;, &#39;scrollbars=yes, height=500, location=no, menubar=no, resizable=yes, toolbar=no, width=840&#39;);return false;" title="Help" href="http://webhelp.episerver.com/16-9/EpiserverUserGuide_csh.htm#indexcontent" target="_blank"><img class="EPEdit-CommandTool" align="absmiddle" src="/App_Themes/Default/Images/Tools/Help.png" border="0" alt="Help" /></a>
+                </h1><p class="EP-systemInfo">This tool manages app settings like enabling and disabling WebSockets and Debug View.</p>
+                <div id="FullRegion_ValidationSummary" class="EP-validationSummary" style="color:Black;display:none;"></div>
+            </div>
+            <div class="epi-contentArea epi-formArea">
+                <table class="table table-bordered">
+                    <tr><th>Feature</th><th>Enabled</th></tr>
+                    <tr><td>Debug View</td><td>@Html.DropDownListFor(m => m.DebugView, Model.Choices)</td></tr>
+                    <tr><td>Web Sockets</td><td>@Html.DropDownListFor(m => m.WebSockets, Model.Choices)</td></tr>
+                </table>
+                Changing app settings will require the website to restart.
+                <div class="epi-buttonDefault">
+                    <span class="epi-cmsButton">
+                        <input class="epi-cmsButton-text epi-cmsButton-tools epi-cmsButton-Refresh" type="submit" name="save" id="save" value="Save" onmouseover="EPi.ToolButton.MouseDownHandler(this)" onmouseout="EPi.ToolButton.ResetMouseDownHandler(this)" />
+                    </span>
+                </div>
+            </div>
+        </div>
+    }
+</body>
+</html>
