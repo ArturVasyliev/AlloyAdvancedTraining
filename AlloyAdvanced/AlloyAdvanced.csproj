@@ -315,6 +315,7 @@
     <Compile Include="Business\Channels\WebChannel.cs" />
     <Compile Include="Business\ContentExtensions.cs" />
     <Compile Include="Business\ContentLocator.cs" />
+    <Compile Include="Business\CustomFieldQuery.cs" />
     <Compile Include="Business\EditorDescriptors\CityEditorDescriptor.cs" />
     <Compile Include="Business\EditorDescriptors\ContactPageSelectionFactory.cs" />
     <Compile Include="Business\EditorDescriptors\ContactPageSelector.cs" />
@@ -336,6 +337,7 @@
     <Compile Include="Business\Initialization\ExtendedTinyMceInitialization.cs" />
     <Compile Include="Business\Initialization\FilterConfig.cs" />
     <Compile Include="Business\Initialization\RegisterPersonalizationEvaluatorsInitialization.cs" />
+    <Compile Include="Business\Initialization\SearchBlocksInitializationModule.cs" />
     <Compile Include="Business\KPI\FilledInFormKpi.cs" />
     <Compile Include="Business\KPI\VisitorGroupKpi.cs" />
     <Compile Include="Business\PageContextActionFilter.cs" />
@@ -401,6 +403,7 @@
     </Compile>
     <Compile Include="Global.cs" />
     <Compile Include="Helpers\CategorizableExtensions.cs" />
+    <Compile Include="Helpers\DocumentExtensions.cs" />
     <Compile Include="Helpers\HtmlHelpers.cs" />
     <Compile Include="Helpers\UrlHelpers.cs" />
     <Compile Include="Models\Blocks\ButtonBlock.cs" />
