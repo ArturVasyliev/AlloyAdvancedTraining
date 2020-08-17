@@ -396,6 +396,7 @@
     <Compile Include="Business\Selectors\SelectOneEnumAttribute.cs" />
     <Compile Include="Business\Selectors\YouTubeSelectionFactory.cs" />
     <Compile Include="Business\ServiceLocatorDependencyResolver.cs" />
+    <Compile Include="Business\Tasks\MyTaskPlugInQuery.cs" />
     <Compile Include="Business\UIDescriptors\ContainerPageUIDescriptor.cs" />
     <Compile Include="Business\ViewTransformers\DebugViewTransformer.cs" />
     <Compile Include="Business\ViewTransformers\RemoveComponentsViewTransformer.cs" />
