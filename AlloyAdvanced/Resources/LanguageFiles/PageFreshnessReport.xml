@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<languages>
+  <language name="English" id="en">
+    <reportcenter>
+      <report name="Page Freshness">
+        <name>Page Freshness</name>
+        <description>Displays the top 10 freshest and least fresh pages.</description>
+      </report>
+    </reportcenter>
+  </language>
+  <language name="Svenska" id="sv">
+    <reportcenter>
+      <report name="PageFreshnessReport">
+        <name>Sida Friskhet</name>
+        <description>Visar de 10 farskaste och minst farska sidor.</description>
+      </report>
+    </reportcenter>
+  </language>
+</languages>

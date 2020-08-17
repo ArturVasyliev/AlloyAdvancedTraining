@@ -1,0 +1,157 @@
+﻿@model PageFreshnessReportViewModel
+@using EPiServer.Framework.Web.Resources
+@{
+    Layout = null;
+}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>@Html.Translate("/reportcenter/report[@name='Page Freshness']/name")</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge" />
+    <!-- Shell -->
+    @Html.Raw(ClientResources.RenderResources("ShellCore"))
+    <!-- LightTheme -->
+    @Html.Raw(ClientResources.RenderResources("ShellCoreLightTheme"))
+    <link href="../../../../App_Themes/Default/Styles/system.css" type="text/css" rel="stylesheet">
+    <link href="../../../../App_Themes/Default/Styles/ToolButton.css" type="text/css" rel="stylesheet">
+</head>
+<body>
+    @Html.Raw(Html.ShellInitializationScript())
+    <div class="epi-contentContainer epi-padding">
+        <div class="epi-contentArea">
+            <div class="EP-systemImage" style="background-image: url('/App_Themes/Default/Images/ReportCenter/ChangedPages.gif');">
+                <h1 class="EP-prefix">
+                    @Html.Translate("/reportcenter/report[@name='Page Freshness']/name")
+                    <a onclick="window.open(&#39;http://webhelp.episerver.com/16-9/EpiserverUserGuide_csh.htm#changedpages&#39;,&#39;_blank&#39;, &#39;scrollbars=yes, height=500, location=no, menubar=no, resizable=yes, toolbar=no, width=840&#39;);return false;" title="Help" href="http://webhelp.episerver.com/16-9/EpiserverUserGuide_csh.htm#changedpages" target="_blank"><img class="EPEdit-CommandTool" align="absmiddle" src="/App_Themes/Default/Images/Tools/Help.png" border="0" alt="Help" /></a>
+                </h1>
+                <p class="EP-systemInfo">
+                    @Html.Translate("/reportcenter/report[@name='Page Freshness']/description")
+                </p>
+            </div>
+            <div id="FullRegion_ValidationSummary" class="EP-validationSummary" style="color: Black; display: none;">
+            </div>
+        </div>
+        @using (Html.BeginForm("Index", "PageFreshnessReport", FormMethod.Post))
+        {
+            <script src="/Util/javascript/episerverscriptmanager.js" type="text/javascript"></script>
+            <script src="../../../../javascript/system.js" type="text/javascript"></script>
+            <script src="../../../../javascript/dialog.js" type="text/javascript"></script>
+            <script src="../../../../javascript/system.aspx" type="text/javascript"></script>
+            <input type="hidden" id="doExport" name="doExport" value="False">
+            <div class="epi-formArea">
+                <fieldset>
+                    <legend>
+                        Report Criteria
+                    </legend>
+                    <div class="epi-size10">
+                        <label for="changedBy">Changed by</label>
+                        <select name="changedBy" id="changedBy">
+                            <option value="Anyone">Anyone</option>
+                            <optgroup label="Administrators">
+                                @foreach (string user in Model.Administrators)
+                                {
+                                    <option value="@user" @(user == Model.SelectedUser ? "selected=selected" : "")>@user</option>
+                                }
+                            </optgroup>
+                            <optgroup label="Editors">
+                                @foreach (string user in Model.Editors)
+                                {
+                                    <option value="@user" @(user == Model.SelectedUser ? "selected=selected" : "")>@user</option>
+                                }
+                            </optgroup>
+                        </select>
+                    </div>
+                </fieldset>
+
+                <div class="epitoolbuttonrow">
+                    <span class="epi-cmsButton"><input class="epi-cmsButton-text epi-cmsButton-tools epi-cmsButton-Report" type="submit" name="showReport" id="showReport" value="Show Report" onmouseover="EPi.ToolButton.MouseDownHandler(this)" onmouseout="EPi.ToolButton.ResetMouseDownHandler(this)" /></span>
+                    <span class="epi-cmsButton"><input class="epi-cmsButton-text epi-cmsButton-tools epi-cmsButton-Report" type="submit" name="exportReport" id="exportReport" value="Export Report" onmouseover="EPi.ToolButton.MouseDownHandler(this)" onmouseout="EPi.ToolButton.ResetMouseDownHandler(this)" /></span>
+                </div>
+
+            </div>
+        }
+
+        @if (Model.ShowReport)
+        {
+            <div class="epi-floatLeft epi-marginVertical-small"><h4>Heroes</h4></div>
+            <div class="epi-contentArea epi-clear">
+                <div>
+                    <dl>
+                        <dd>Hero of the week</dd>
+                        <dt>@Model.HeroOfTheWeek</dt>
+                        <dd>Hero of the month</dd>
+                        <dt>@Model.HeroOfTheMonth</dt>
+                        <dd>Hero of the year</dd>
+                        <dt>@Model.HeroOfTheYear</dt>
+                    </dl>
+                </div>
+            </div>
+
+            if (Model.Top10FreshestPages != null && Model.Top10FreshestPages.Count() > 0)
+            {
+                <div class="epi-floatLeft epi-marginVertical-small"><h4>Top 10 Freshest Pages</h4></div>
+                <div class="epi-contentArea epi-clear">
+                    <div>
+                        <table class="epi-default epi-default-legacy" cellspacing="0" id="FullRegion_MainRegion_ReportView" style="border-style: None; width: 100%; border-collapse: collapse;">
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Link</th>
+                                <th scope="col">Saved</th>
+                                <th scope="col">Saved By</th>
+                            </tr>
+                            @foreach (var page in Model.Top10FreshestPages)
+                            {
+                                <tr>
+                                    <td>@page.ContentLink.ID</td>
+                                    <td>@page.Name</td>
+                                    <td>@Url.ContentUrl(page.ContentLink)</td>
+                                    <td>@page.Saved.ToString("yyyy-MM-dd HH:mm")</td>
+                                    <td>@page.SavedBy</td>
+                                </tr>
+                            }
+                        </table>
+                    </div>
+                </div>
+            }
+
+            if (Model.Top10LeastFreshPages != null && Model.Top10LeastFreshPages.Count() > 0)
+            {
+                <div class="epi-floatLeft epi-marginVertical-small"><h4>Top 10 Least Fresh Pages</h4></div>
+                <div class="epi-contentArea epi-clear">
+                    <div>
+                        <table class="epi-default epi-default-legacy" cellspacing="0" id="FullRegion_MainRegion_ReportView" style="border-style: None; width: 100%; border-collapse: collapse;">
+                            <tr>
+                                <th scope="col">ID</th>
+                                <th scope="col">Name</th>
+                                <th scope="col">Link</th>
+                                <th scope="col">Saved</th>
+                                <th scope="col">Saved By</th>
+                            </tr>
+                            @foreach (var page in Model.Top10LeastFreshPages)
+                            {
+                                <tr>
+                                    <td>@page.ContentLink.ID</td>
+                                    <td>@page.Name</td>
+                                    <td>@Url.ContentUrl(page.ContentLink)</td>
+                                    <td>@page.Saved.ToString("yyyy-MM-dd HH:mm")</td>
+                                    <td>@page.SavedBy</td>
+                                </tr>
+                            }
+                        </table>
+                    </div>
+                </div>
+            }
+        }
+
+    </div>
+    <script type="text/javascript">
+        document.getElementById("exportReport").onclick = function () {
+            document.getElementById("doExport").value = "True";
+        };
+        document.getElementById("showReport").onclick = function () {
+            document.getElementById("doExport").value = "False";
+        };
+    </script>
+</body>
+</html>
