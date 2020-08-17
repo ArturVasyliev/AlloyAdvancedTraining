@@ -1,0 +1,19 @@
+﻿@using AlloyAdvanced.Features.NorthwindPartialRouter
+@using AlloyAdvanced.Models.NorthwindEntities
+@using AlloyAdvanced.Models.ViewModels
+@model PageViewModel<CategoriesPage>
+<div class="row">
+    <div class="span12">
+        <h2>@Model.CurrentPage.NorthwindCategory.CategoryName</h2>
+        <div>
+            @Model.CurrentPage.NorthwindCategory.Description
+        </div>
+        <table class="table table-striped">
+            <tr><th>Product Name</th><th>Unit Price</th></tr>
+            @foreach (Product p in Model.CurrentPage.NorthwindCategory.Products)
+            {
+                <tr><td>@p.ProductName</td><td>@p.UnitPrice.Value.ToString("$0.00")</td></tr>
+            }
+        </table>
+    </div>
+</div>

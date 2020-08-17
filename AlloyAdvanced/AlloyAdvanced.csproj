@@ -329,6 +329,11 @@
     <Compile Include="Features\Favorites\FavoritesController.cs" />
     <Compile Include="Features\Favorites\FavoritesInitializationModule.cs" />
     <Compile Include="Features\Favorites\FavoriteViewModel.cs" />
+    <Compile Include="Features\NorthwindPartialRouter\CategoriesPage.cs" />
+    <Compile Include="Features\NorthwindPartialRouter\CategoriesPageController.cs" />
+    <Compile Include="Features\NorthwindPartialRouter\CategoryController.cs" />
+    <Compile Include="Features\NorthwindPartialRouter\CategoryPartialRouter.cs" />
+    <Compile Include="Features\NorthwindPartialRouter\CategoryPartialRouterRegistration.cs" />
     <Compile Include="Features\ResetAdmin\ResetAdmin.cs" />
     <Compile Include="Features\ResetAdmin\ResetAdminController.cs" />
     <Compile Include="Features\ShareThis\ShareThisBlock.cs" />
@@ -480,6 +485,8 @@
     <Content Include="Features\UserNotifications\NotificationsPage.cshtml" />
     <Content Include="Features\UserNotifications\SendNotificationPage.cshtml" />
     <Content Include="Features\Favorites\FavoritesMenu.cshtml" />
+    <Content Include="Features\NorthwindPartialRouter\CategoriesPage.cshtml" />
+    <Content Include="Features\NorthwindPartialRouter\Category.cshtml" />
     <None Include="packages.config" />
     <Content Include="Views\SearchPage\Index.cshtml" />
     <Content Include="Views\_viewstart.cshtml" />

@@ -1,0 +1,14 @@
+﻿@using AlloyAdvanced.Features.NorthwindPartialRouter
+@using AlloyAdvanced.Models.ViewModels
+@model PageViewModel<CategoriesPage>
+<div class="row">
+    <div class="span12">
+        <h2>Northwind Categories</h2>
+        <ul>
+            @foreach (KeyValuePair<string, string> category in Model.CurrentPage.CategoryLinks)
+            {
+                <li><a href="@category.Value">@category.Key</a></li>
+            }
+        </ul>
+    </div>
+</div>
