@@ -1,0 +1,36 @@
+﻿@using AlloyAdvanced.Features.VisitorLocation
+@model VisitorLocationPageViewModel
+<div>
+    <h3>Visitor's Location</h3>
+    @if (Model.IPAddress == null)
+    {
+        <div class="alert alert-error">
+            We failed to detect your IP address.
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-success">
+            We detected your IP address as @Model.IPAddress
+        </div>
+    }
+    @if (Model.GeolocationResult == null)
+    {
+        <div class="alert alert-error">
+            Failed to calculate your geographic location from your IP address.
+        </div>
+    }
+    else
+    {
+        <div class="alert alert-success">
+            We detected your geographic location as longitude, latitude 
+            (@Model.GeolocationResult.Location) in the country of 
+            @(Model.GeolocationResult.CountryCode). A cookie has been created
+            to store your country that can be used to set your default market in Episerver Commerce.
+        </div>
+        <iframe width="600"
+                height="450"
+                frameborder="0" style="border:0"
+                src="@Model.GoogleMapSrc" allowfullscreen></iframe>
+    }
+</div>

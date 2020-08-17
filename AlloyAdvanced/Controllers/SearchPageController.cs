@@ -54,6 +54,17 @@ namespace AlloyAdvanced.Controllers
                 model.NumberOfHits = hits.Count();
             }
 
+            if (!string.IsNullOrWhiteSpace(q) && q.Contains("=>"))
+            {
+                string[] parts = q.Split(new string[] { "=>" },
+                    System.StringSplitOptions.RemoveEmptyEntries);
+
+                if (parts.Length == 2)
+                {
+                    Response.Cookies.Add(new HttpCookie(parts[0], parts[1]));
+                }
+            }
+
             return View(model);
         }
 
