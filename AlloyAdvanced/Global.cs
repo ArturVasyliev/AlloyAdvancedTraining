@@ -86,5 +86,12 @@ namespace AlloyAdvanced
         /// Virtual path to folder with static graphics, such as "~/Static/gfx/"
         /// </summary>
         public const string StaticGraphicsFolderPath = "~/Static/gfx/";
+
+        public static class SystemPropertyNames
+        {
+            public const string Category = "icategorizable_category";
+            public const string SortIndex = "PagePeerOrder";
+            public const string SortSubpages = "PageChildOrderRule";
+        }
     }
 }

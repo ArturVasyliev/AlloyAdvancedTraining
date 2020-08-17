@@ -295,6 +295,10 @@
     <Compile Include="Business\EditorDescriptors\ContactPageSelectionFactory.cs" />
     <Compile Include="Business\EditorDescriptors\ContactPageSelector.cs" />
     <Compile Include="Business\EditorDescriptors\EmbiggenEditorDescriptor.cs" />
+    <Compile Include="Business\EditorDescriptors\HideCategoryEditorDescriptor.cs" />
+    <Compile Include="Business\EditorDescriptors\MoveSortIndexEditorDescriptor.cs" />
+    <Compile Include="Business\EditorDescriptors\MoveSortSubpagesEditorDescriptor.cs" />
+    <Compile Include="Business\EditorDescriptors\PropertyLoggerEditorDescriptor.cs" />
     <Compile Include="Business\EditorDescriptors\StringListEditorDescriptor.cs" />
     <Compile Include="Business\IModifyLayout.cs" />
     <Compile Include="Business\Initialization\BundleConfig.cs" />
