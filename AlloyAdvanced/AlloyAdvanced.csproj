@@ -564,6 +564,9 @@
     <Content Include="Views\ArticlePage\Index.cshtml" />
     <Content Include="Views\Shared\Blocks\CommentBlock.cshtml" />
     <Content Include="Views\ShippersPage\Index.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Cities.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\Email.cshtml" />
+    <Content Include="Views\Shared\DisplayTemplates\YouTube.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
