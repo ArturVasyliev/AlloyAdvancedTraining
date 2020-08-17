@@ -106,6 +106,27 @@
     <Reference Include="EPiServer.Events, Version=11.17.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
       <HintPath>..\packages\EPiServer.Framework.11.17.0\lib\net461\EPiServer.Events.dll</HintPath>
     </Reference>
+    <Reference Include="EPiServer.Find, Version=13.2.8.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPiServer.Find.13.2.8\lib\net461\EPiServer.Find.dll</HintPath>
+    </Reference>
+    <Reference Include="EPiServer.Find.Blocks, Version=1.0.0.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPiServer.Find.Cms.13.2.8\lib\net461\EPiServer.Find.Blocks.dll</HintPath>
+    </Reference>
+    <Reference Include="EPiServer.Find.Cms, Version=13.2.8.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPiServer.Find.Cms.13.2.8\lib\net461\EPiServer.Find.Cms.dll</HintPath>
+    </Reference>
+    <Reference Include="EPiServer.Find.Framework, Version=13.2.8.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPiServer.Find.Framework.13.2.8\lib\net461\EPiServer.Find.Framework.dll</HintPath>
+    </Reference>
+    <Reference Include="EPiServer.Find.Optimizations, Version=13.2.8.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPiServer.Find.Cms.13.2.8\lib\net461\EPiServer.Find.Optimizations.dll</HintPath>
+    </Reference>
+    <Reference Include="EPiServer.Find.Statistics, Version=13.2.8.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPiServer.Find.Cms.13.2.8\lib\net461\EPiServer.Find.Statistics.dll</HintPath>
+    </Reference>
+    <Reference Include="EPiServer.Find.UI, Version=13.2.8.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
+      <HintPath>..\packages\EPiServer.Find.Cms.13.2.8\lib\net461\EPiServer.Find.UI.dll</HintPath>
+    </Reference>
     <Reference Include="EPiServer.Forms, Version=4.29.2.0, Culture=neutral, PublicKeyToken=8fe83dea738b45b7, processorArchitecture=MSIL">
       <HintPath>..\packages\EPiServer.Forms.4.29.2\lib\EPiServer.Forms.dll</HintPath>
     </Reference>
@@ -258,6 +279,9 @@
     </Reference>
     <Reference Include="System.Net" />
     <Reference Include="System.Net.Http" />
+    <Reference Include="System.Net.Http.Formatting, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.5.0.0\lib\net45\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
     <Reference Include="System.Runtime.Remoting" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
@@ -297,6 +321,12 @@
     <Reference Include="System.Web.Abstractions" />
     <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.5.0.0\lib\net45\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=5.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.5.0.0\lib\net45\System.Web.Http.WebHost.dll</HintPath>
     </Reference>
     <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
@@ -359,6 +389,7 @@
     <Compile Include="Business\EditorDescriptors\MoveSortSubpagesEditorDescriptor.cs" />
     <Compile Include="Business\EditorDescriptors\PropertyLoggerEditorDescriptor.cs" />
     <Compile Include="Business\EditorDescriptors\StringListEditorDescriptor.cs" />
+    <Compile Include="Business\ExtensionMethods\EpiserverFindExtensionMethods.cs" />
     <Compile Include="Business\IModifyLayout.cs" />
     <Compile Include="Business\Initialization\AppSettingsInitializationModule.cs" />
     <Compile Include="Business\Initialization\BundleConfig.cs" />
@@ -370,6 +401,7 @@
     <Compile Include="Business\Initialization\DisplayRegistryInitialization.cs" />
     <Compile Include="Business\Initialization\ExtendedTinyMceInitialization.cs" />
     <Compile Include="Business\Initialization\FilterConfig.cs" />
+    <Compile Include="Business\Initialization\MultisiteFindInitializationModule.cs" />
     <Compile Include="Business\Initialization\PageFreshnessReportInitializationModule.cs" />
     <Compile Include="Business\Initialization\RegisterPersonalizationEvaluatorsInitialization.cs" />
     <Compile Include="Business\Initialization\SearchBlocksInitializationModule.cs" />
@@ -405,6 +437,7 @@
     <Compile Include="Controllers\AppSettingsController.cs" />
     <Compile Include="Controllers\ContactBlockController.cs" />
     <Compile Include="Controllers\DefaultPageController.cs" />
+    <Compile Include="Controllers\FindSearchPageController.cs" />
     <Compile Include="Controllers\ImageFileController.cs" />
     <Compile Include="Controllers\PageControllerBase.cs" />
     <Compile Include="Controllers\PageFreshnessReportController.cs" />
@@ -498,6 +531,7 @@
     <Compile Include="Models\ViewModels\CommentsPageViewModel.cs" />
     <Compile Include="Models\ViewModels\ContactBlockModel.cs" />
     <Compile Include="Models\ViewModels\ContentRenderingErrorModel.cs" />
+    <Compile Include="Models\ViewModels\FindSearchPageViewModel.cs" />
     <Compile Include="Models\ViewModels\ImageViewModel.cs" />
     <Compile Include="Models\ViewModels\IPageViewModel.cs" />
     <Compile Include="Models\ViewModels\LayoutModel.cs" />
@@ -527,6 +561,7 @@
     <Content Include="ClientResources\Styles\Styles.css" />
     <Content Include="favicon.ico" />
     <Content Include="IndexingService\IndexingService.svc" />
+    <Content Include="license.txt" />
     <Content Include="modules\_protected\EPiServer.Forms.Samples\3.6.0\ClientResources\Criteria\SubmittedValue.js" />
     <Content Include="modules\_protected\EPiServer.Forms.Samples\3.6.0\ClientResources\epi-formssamples\FormsSamplesModule.js" />
     <Content Include="modules\_protected\EPiServer.Forms.Samples\3.6.0\ClientResources\epi-formssamples\themes\sleek\FormsSamples.css" />
@@ -718,6 +753,7 @@
     <Content Include="Views\Shared\DisplayTemplates\YouTube.cshtml" />
     <Content Include="Views\AppSettings\Index.cshtml" />
     <Content Include="Views\PageFreshnessReport\Index.cshtml" />
+    <Content Include="Views\FindSearchPage\Index.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
