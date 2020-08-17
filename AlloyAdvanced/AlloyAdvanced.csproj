@@ -291,6 +291,7 @@
     <Compile Include="Business\Channels\WebChannel.cs" />
     <Compile Include="Business\ContentExtensions.cs" />
     <Compile Include="Business\ContentLocator.cs" />
+    <Compile Include="Business\EditorDescriptors\CityEditorDescriptor.cs" />
     <Compile Include="Business\EditorDescriptors\ContactPageSelectionFactory.cs" />
     <Compile Include="Business\EditorDescriptors\ContactPageSelector.cs" />
     <Compile Include="Business\EditorDescriptors\EmbiggenEditorDescriptor.cs" />
@@ -319,6 +320,11 @@
     <Compile Include="Business\ScheduledJobs\ImportImagesScheduledJob.cs" />
     <Compile Include="Business\ScheduledJobs\ImportShippersScheduledJob.cs" />
     <Compile Include="Business\SearchService.cs" />
+    <Compile Include="Business\Selectors\CitySelectionFactory.cs" />
+    <Compile Include="Business\Selectors\EnumSelectionFactory.cs" />
+    <Compile Include="Business\Selectors\SelectManyEnumAttribute.cs" />
+    <Compile Include="Business\Selectors\SelectOneEnumAttribute.cs" />
+    <Compile Include="Business\Selectors\YouTubeSelectionFactory.cs" />
     <Compile Include="Business\ServiceLocatorDependencyResolver.cs" />
     <Compile Include="Business\UIDescriptors\ContainerPageUIDescriptor.cs" />
     <Compile Include="Controllers\ContactBlockController.cs" />
@@ -370,6 +376,7 @@
     <Compile Include="Models\Blocks\SiteBlockData.cs" />
     <Compile Include="Models\Blocks\SiteLogotypeBlock.cs" />
     <Compile Include="Models\Blocks\TeaserBlock.cs" />
+    <Compile Include="Models\EpiserverYouTube.cs" />
     <Compile Include="Models\IContentWithComments.cs" />
     <Compile Include="Models\Media\GenericMedia.cs" />
     <Compile Include="Models\Media\ImageFile.cs" />
@@ -401,6 +408,7 @@
     <Compile Include="Models\Pages\StandardPage.cs" />
     <Compile Include="Models\Pages\StartPage.cs" />
     <Compile Include="Models\Properties\PropertyStringList.cs" />
+    <Compile Include="Models\Region.cs" />
     <Compile Include="Models\Register\RegisterViewModel.cs" />
     <Compile Include="Models\SiteContentType.cs" />
     <Compile Include="Models\SiteImageUrl.cs" />
@@ -436,6 +444,8 @@
     <Content Include="Resources\LanguageFiles\ContentTypeNames.xml" />
     <Content Include="Resources\LanguageFiles\Display.xml" />
     <Content Include="Resources\LanguageFiles\EditorHints.xml" />
+    <Content Include="Resources\LanguageFiles\Enums-sv.xml" />
+    <Content Include="Resources\LanguageFiles\Enums.xml" />
     <Content Include="Resources\LanguageFiles\GroupNames.xml" />
     <Content Include="Resources\LanguageFiles\PropertyNames.xml" />
     <Content Include="Resources\LanguageFiles\Views.xml" />

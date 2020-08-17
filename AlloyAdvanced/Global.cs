@@ -75,6 +75,7 @@ namespace AlloyAdvanced
         /// </summary>
         public static class SiteUIHints
         {
+            public const string City = "City";
             public const string Contact = "contact";
             public const string Strings = "StringList";
             public const string StringsCollection = "StringsCollection";

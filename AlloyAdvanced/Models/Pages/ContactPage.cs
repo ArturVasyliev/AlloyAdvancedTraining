@@ -2,6 +2,8 @@ using System.ComponentModel.DataAnnotations;
 using AlloyAdvanced.Business.Rendering;
 using EPiServer.Web;
 using EPiServer.Core;
+using AlloyAdvanced.Business.Selectors;
+using EPiServer.Shell.ObjectEditing;
 
 namespace AlloyAdvanced.Models.Pages
 {
@@ -24,5 +26,33 @@ namespace AlloyAdvanced.Models.Pages
         [Display(GroupName = Global.GroupNames.Contact)]
         [EmailAddress]
         public virtual string Email { get; set; }
+
+        [Display(
+            Name = "Region",
+            GroupName = Global.GroupNames.Contact,
+            Order = 10)]
+        [SelectOneEnum(typeof(Region))]
+        public virtual Region Region { get; set; }
+
+        [Display(
+            Name = "YouTube video",
+            GroupName = Global.GroupNames.Contact,
+            Order = 20)]
+        [SelectOne(SelectionFactoryType = typeof(YouTubeSelectionFactory))]
+        public virtual string YouTubeVideo { get; set; }
+
+        [Display(
+            Name = "Home city",
+            GroupName = Global.GroupNames.Contact,
+            Order = 30)]
+        [SelectOne(SelectionFactoryType = typeof(CitySelectionFactory))]
+        public virtual string HomeCity { get; set; }
+
+        [Display(
+            Name = "Other cities",
+            GroupName = Global.GroupNames.Contact,
+            Order = 40)]
+        [SelectMany(SelectionFactoryType = typeof(CitySelectionFactory))]
+        public virtual string OtherCities { get; set; }
     }
 }
